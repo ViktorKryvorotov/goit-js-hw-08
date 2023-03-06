@@ -28,6 +28,9 @@ if (saveData) {
 feedbackForm.addEventListener('submit', handleSubmit);
 function handleSubmit(evt) {
     evt.preventDefault();
+    if (!emailInputRef.value || !messageInputRef.value) {
+         alert('всі поля повиннібути заповнені');
+    }else{
     const formData = {
         email: emailInputRef.value,
         message: messageInputRef.value,
@@ -36,7 +39,7 @@ function handleSubmit(evt) {
 emailInputRef.value = '';
 messageInputRef.value = '';
 localStorage.removeItem(LOCALSTORAGE_KEY);
-};
+}};
 
 
 
